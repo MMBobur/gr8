@@ -13,12 +13,13 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 // import AdbIcon from '@mui/icons-material/Adb';
 
-const pages = ['HOME', 'ABOUT US', 'SERVICES', 'PRODUCTS','BLOG','CONTACT','DROPDOWN'];
-const settings = ['Products', 'Pricing', 'Blog'];
+const pages = ['Home', 'About Us', 'Services', 'Products','Blog','Contact','Dropdown'];
+const settings = ['Home', 'About Us', 'Services', 'Products','Blog','Contact','Dropdown'];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [isScroll, setIsScroll] = React.useState(false)
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -31,13 +32,23 @@ function Navbar() {
     setAnchorElNav(null);
   };
 
+  React.useEffect(() => {
+    window.onscroll = () => {
+      if (window.scrollY >= 20) {
+        setIsScroll(true)
+      }else {
+        setIsScroll(false)
+      }
+    }
+  }, [])
+
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
 
   return (
-    <AppBar position="static" style={{
-      backgroundColor:'#959BFFFF',position:'fixed',opacity:'0.9'}}>
+    <AppBar position="fixed" 
+    sx={{background:'none',boxShadow:"none",backgroundColor: isScroll ? "#959BFFDE" : "none"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
@@ -68,45 +79,6 @@ function Navbar() {
             Q7W0FZvK7IswSZKtHyn5YjVJyr5Y7al9VpNe39bM9LGZrs1MT5uZrs1MD9b2WU16/eUr+6wmvd7Av7Oa9HoDUZ8+0esNRLXp9Qai2vT6OwMA'
             alt=''/>
           </Typography>
-
-          {/* <Box sx={{ flexGrow: 1,border:'1px solid red',float:'left', display: { xs: 'flex', md: 'none' }  }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-              style={{border:'1px solid red',float:'right'}}
-            >
-              <MenuIcon style={{border:'1px solid red',float:'right'}}/>
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -152,7 +124,8 @@ function Navbar() {
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: 'bottom',
-                horizontal: 'left',
+                horizontal: 'right',
+
               }}
               keepMounted
               transformOrigin={{
