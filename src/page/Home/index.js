@@ -5,7 +5,7 @@ import Banner from "./../../components/banner";
 import Robotics from "../../components/robotics";
 import Globally from "./../../components/globally";
 import Latest from "./../../components/latest";
-import Footer from "./../../components/footer";
+import Footer from "../../components/footer";
 
 function Home() {
   return (
