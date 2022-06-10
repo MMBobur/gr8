@@ -1,11 +1,13 @@
 import './App.css';
 
-import Home from "./page/Home";
+// import Home from "./page/Home";
+import Index from './components/globally/Index';
 
 function App () {
   return (
     <div>
-      <Home/>
+      <Index/>
+      {/* <Home/> */}
     </div>
   );
 

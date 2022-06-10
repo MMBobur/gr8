@@ -7,15 +7,16 @@ import Globally from "./../../components/globally";
 import Latest from "./../../components/latest";
 import Footer from "../../components/footer";
 
+
 function Home() {
   return (
     <div>
-      <Navbar/>
-      <Banner/>
+      <Navbar/> 
+      <Banner/> 
       <Robotics/>
       <Globally/>
-      <Latest/>
-      <Footer/>
+      <Latest/> 
+      <Footer/> 
     </div>
   )
 }
