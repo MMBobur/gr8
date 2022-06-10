@@ -1,0 +1,12 @@
+.A{
+    padding: 1%;
+    font-size: 20px;
+    margin-right: 5%;
+    background-color: #AD93FF;
+    color: white;
+    border: none;
+}
+.A:hover{
+    background-color: white;
+    color: black;
+}
