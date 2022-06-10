@@ -16,7 +16,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Banner() {
   return (
-    <Box style={{backgroundColor:'blue',height:'600px',width:'100%'}}>
+    <Box style={{backgroundColor:'blue',height:'100%',width:'100%'}}>
        <Container>
       <Grid container spacing={5} columns={12}>
         <Grid item xs={12} sm={12} md={6} lg={6} sx={{mt:'2%'}}>
